@@ -173,7 +173,7 @@ db.productos.find({
 Esto nos devuelve la lista de productos que cumplan con los operadores, pero solamente sus nombres y precios, nada más. Se pone "id: 0", para señalar que no lo queremos.
 # U-pdate, o actualización de documentos
 Ahora, vamos a ver como podremos actualizar los documentos, es esencialmente sencillo.
-## Actualizar un documento
+#### Actualizar un documento (updateOne)
 Para actualizar un documento, vamos a usar **updateOne** y el operador **$set**:
 ```json
 db.productos.updateOne(
@@ -184,10 +184,46 @@ db.productos.updateOne(
 Para reemplazar varios campos:
 ```json
 db.productos.updateOne(
-	{ categoria: "Electrodomésticos" },
+	{ nombre: "Laptop Pro X" },
 	$set: {
 		precio: 1200,
 		disponible: true
 	}
 )
 ```
+#### Actualizar varios documentos (updateMany)
+Es esencialmente lo mismo, pero tenga en cuenta que ahora el operador de busqueda, debe coincidir con varios documentos, no solo con uno.
+```json
+db.productos.updateMany(
+	{ categoria: "Electrodomésticos" },
+	{ $set: { disponible: false } }
+)
+```
+#### Reemplazar todo el documento (replaceOne)
+Los operadores anteriores solo servían para cambiar el valor de algunos campos, y el resto de campos del documento quedaban intactos. En este caso, cuando modifiquemos un campo con **replaceOne**, y no especifiquemos valores para el resto, simplemente se eliminan.
+```json
+db.productos.replaceOne(
+	{ nombre: "Televisor" },
+	{
+		precio: 1200,
+		disponible: false,
+		nombre: "TV"
+	}
+)
+```
+En este caso, el documento "Televisor" paso a llamarse "TV", y todos sus campos excepto "precio", "disponible", y "nombre" fueron eliminados.
+## Operadores de actualización
+Ya hemos estado usando $set, pero no es el único operador, hay otros que también hacen cosas curiosas.
+#### $set
+Este operador permite actualizar, o crear un nuevo campo dentro de un documento.
+#### $inc
+Este operador permite aumentar, o disminuir el valor de un campo dentro de un comento. Todo depende de si el nuevo valor es positivo, o negativo.
+#### $push
+Si tenemos un campo que es un array de elementos, y queremos incluir uno nuevo, usamos $push.
+#### $pull
+Si tenemos un campo que es un array de elementos, y queremos eliminar uno de ellos, usamos $pull.
+#### $unset
+Si queremos eliminar uno, o varios campos de un documento, usamos $unset.
+> [!important] Sobre los operadores
+> Estos operadores se usan todos con **updateOne**, o con **updateMany** si la operación se quiere hacer con varios documentos. Son idénticos al uso de **$set**, solo que su comportamiento sobre los campos es distinto.
+
