@@ -138,4 +138,25 @@ Veamos como se ve más o menos una colección en MongoDB:
 }
 ```
 # Instalación local
-Vamos a ver como se instala de forma local, aunque tenga en cuenta que la mejor manera de usar MongoDB es usando Mo
+Vamos a ver como se instala de forma local, aunque tenga en cuenta que la mejor manera de usar MongoDB es usando MongoDB Atlas, ya que no hay que configurar muchas cosas, y ya todo tiene las mejores practicas de seguridad posibles.
+#### Preparar dependencias, llave GPG, y repositorio
+```bash
+sudo apt-get update && sudo apt-get install -y gnupg curl
+curl -fsSL https://pgp.mongodb.com/server-7.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+```
+#### Actualizar, e instalar MongoDB
+```bash
+sudo apt-get update && sudo apt-get install -y mongodb-org
+```
+#### Habilitar, e iniciar el servicio
+```bash
+sudo systemctl enable --now mongod
+sudo systemctl status mongod
+```
+Luego de esto, presionas la "q", para podamos seguir con la verificación.
+#### Verificación
+```bash
+mongosh --eval "db.adminCommand({ ping: 1 })"
+```
+Si aparece: **{ ok: 1 }**, bravo, lo instalaste correctamente.
