@@ -59,3 +59,83 @@ En este caso:
 - **Valor:** "loan"
 - **Campo:** "nombre": "loan"
 Sencillo, ¿No?
+#### Documento
+Un documento es un conjunto de campos que están limitados entre llaves **{ ... }**, por ejemplo:
+```json
+{
+	"nombre": "loan",
+	"edad": 28,
+	"carrera": "ingeniería de sistemas",
+	"dirección": {
+		"calle": 1,
+		"barrio": "el primero"
+	}
+}
+```
+Todo lo anterior es un documento, y como podemos notar, dentro de este hay otro documento anidado.
+#### Colección
+Podría decirse que son todos los documentos que están limitados por un **[ ... ]**, y están metidos dentro del mismo archivo:
+```json
+[
+	{
+		"nombre": "Loan",
+		"edad": 26,
+		"carrera": "ingeniería de sistemas",
+		"dirección":
+		{
+			"Calle": 1,
+			"barrio": "primero"
+		}
+	},
+	{
+		"nombre": "Luis",
+		"edad": 22,
+		"carrera": "ingeniería de sistemas",
+		"dirección":
+		{
+			"Calle": 3,
+			"barrio": "tercero"
+		}
+	}
+]
+```
+Se recomienda que por archivo, no se tenga más de un **[ ... ]**, en ese caso, mejor se maneja una lógica que permita separar las cosas.
+# Ejemplo final
+Veamos como se ve más o menos una colección en MongoDB:
+```json
+{
+	"usuario": "loan",
+	"post": [
+		{
+			"titulo": "mi primer post!",
+			"contenido": "blablabla",
+			"comentarios": [
+				{
+					"usuario": "Lisa",
+					"comentario": "Joer que buen post"
+				},
+				{
+					"usuario": "Luis",
+					"comentario": "Muy bien!!"
+				}
+			]
+		},
+		{
+			"titulo": "mi segundo post!",
+			"contenido": "blablabla",
+			"comentarios": [
+				{
+					"usuario": "Lisa",
+					"comentario": "saludame la proxima vez"
+				},
+				{
+					"usuario": "Luis",
+					"comentario": "nada nuevo bro wtf"
+				}
+			]
+		}
+	]
+}
+```
+# Instalación local
+Vamos a ver como se instala de forma local, aunque tenga en cuenta que la mejor manera de usar MongoDB es usando Mo
