@@ -5,10 +5,57 @@ Hay varias cosas que debemos de considerar antes de hundirnos de cabeza en Mongo
 ```json
 {
 	"Elemento": "valor",
-	"otro elemento": "otro valor",
-	"elemento numerico": 28
+	"otro_elemento": "otro valor",
+	"elemento_numerico": 28
 }
 ```
 Básicamente, así funcionan los **JSON**, aunque también podemos hacer otras cosas aún más locas.
 #### Anidamiento en JSON
-Como su nombre indica, podemos meter un JSON dentro de 
+Como su nombre indica, podemos meter un JSON dentro de otro:
+```json
+{
+	"nombre": "daniel",
+	"medidas": {
+		"peso": 97,
+		"alto": 183,
+		"calzado": 43,
+		"camiseta": "XL"
+	}
+}
+```
+#### Listas en JSON
+Si tuviéramos que meter varios JSON dentro de un JSON, pero **todos están relacionados por algo**, usamos una lista:
+```json
+{
+	"nombre": "loan",
+	"peliculas_favoritas": [
+		{
+			"nombre": "el padrino",
+			"año": 1972
+		},
+		{
+			"nombre": "el mago de Oz",
+			"año": 1979
+		},
+		{
+			"nombre": "ciudadano kane",
+			"año": 1941
+		}
+	]
+}
+```
+Bien, eso es básicamente todo lo que se puede hacer en un JSON, porque pues, se supone que es una estructura que solo transmite información escrita, y ya.
+# Estructura de MongoDB
+Ya vimos que MongoDB guarda y envia únicamente elementos de tipo JSON, pero, ¿Cómo rayos se estructuran?
+#### Clave, valor, y campo
+Son las unidades mínimas de MongoDB, por ejemplo:
+```json
+{
+	"nombre": "loan"
+}
+```
+En este caso:
+- **Clave:** "nombre:"
+- **Valor:** "loan"
+- **Campo:** "nombre": "loan"
+Sencillo, ¿No?
