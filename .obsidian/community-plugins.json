@@ -9,5 +9,6 @@
   "obsidian-excalidraw-plugin",
   "obsidian-diagrams-net",
   "code-styler",
-  "obsidian-git"
+  "obsidian-git",
+  "shiki-highlighter"
 ]

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MongoDB/Sin título.md",
+                "file": "MongoDB/Operaciones CRUD.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sin título"
+              "title": "Operaciones CRUD"
             }
           }
         ]
@@ -210,7 +210,7 @@
   },
   "active": "030e72c199f48e4e",
   "lastOpenFiles": [
-    "MongoDB/Sin título.md",
+    "MongoDB/Operaciones CRUD.md",
     "MongoDB/Comandos básicos de MongoDB.md",
     "MongoDB/MongoDB.md",
     "MongoDB",
