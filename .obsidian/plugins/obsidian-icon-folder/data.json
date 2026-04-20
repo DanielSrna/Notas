@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiCommand",
       "LiBookA",
       "LiArchiveRestore",
       "LiArchive",
-      "LiSquareRoundCorner",
-      "LiTowerControl"
+      "LiSquareRoundCorner"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -109,5 +109,6 @@
   "MongoDB/Fundamentos de MongoDB.md": {
     "iconName": "LiBookA",
     "iconColor": "#00684a"
-  }
+  },
+  "MongoDB/Comandos básicos de MongoDB.md": "LiCommand"
 }

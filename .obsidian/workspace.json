@@ -23,12 +23,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MongoDB/Comandos básicos de MongoDB.md",
+                "file": "MongoDB/Fundamentos de MongoDB.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Comandos básicos de MongoDB"
+              "title": "Fundamentos de MongoDB"
             }
           }
         ],
@@ -219,10 +219,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5553cb82e7ded50e",
+  "active": "875453812ad4524f",
   "lastOpenFiles": [
-    "MongoDB/Fundamentos de MongoDB.md",
     "MongoDB/Comandos básicos de MongoDB.md",
+    "MongoDB/Fundamentos de MongoDB.md",
     "MongoDB",
     "Módulos reutilizables/Análisis, procesamiento, y guardado de archivos.md",
     "Express/Static Files.md",
