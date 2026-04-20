@@ -106,9 +106,12 @@
     "iconName": "LiArchiveRestore",
     "iconColor": "#6e6bef"
   },
-  "MongoDB/Fundamentos de MongoDB.md": {
-    "iconName": "LiBookA",
+  "MongoDB/Comandos básicos de MongoDB.md": {
+    "iconName": "LiCommand",
     "iconColor": "#00684a"
   },
-  "MongoDB/Comandos básicos de MongoDB.md": "LiCommand"
+  "MongoDB/MongoDB.md": {
+    "iconName": "LiBookA",
+    "iconColor": "#00684a"
+  }
 }
