@@ -1,4 +1,4 @@
 MongoDB es una base de datos NoSQL de tipo documental, que escala horizontalmente. Te preguntaras, ¿Qué rayos es escalar horizontalmente, y por qué es mejor que hacerlo verticalmente?
 Es muy sencillo, si la base de datos escala horizontalmente, puedes dividirla en varios computadores, mientras que si escala verticalmente, no puedes dividirla, y el computador en donde se aloja debe mejorarse cada vez más hasta tener un demonio monolítico. 
 # Conceptos básicos
-Hay varias cosas que debemos de considerar antes de hundirnos de cabeza en MongoDB, lo primordial es entender que MongoDB no almacena imágenes, vídeos, o archivos en general, sino, algo llamado **JSON**, se trata básicamente de una estructura de texto super compatible con casi t
+Hay varias cosas que debemos de considerar antes de hundirnos de cabeza en MongoDB, lo primordial es entender que MongoDB no almacena imágenes, vídeos, o archivos en general, sino, algo llamado **JSON**, se trata básicamente de una estructura de texto super compatible con casi todos los lenguajes de programación.
