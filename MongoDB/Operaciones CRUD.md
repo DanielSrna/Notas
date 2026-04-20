@@ -153,4 +153,41 @@ db.productos.find({
 	]
 })
 ```
-En este caso, buscamo
+En este caso, buscamos todos los productos cuyos valores "precio", o "categoría", cumplan con los valores de las operaciones. Al menos uno de ellos, por ejemplo, si no hay producto de categoría "electrodomésticos", pero se encontró un producto que cuesta menos de 200, pues se muestra.
+## Proyección de campos
+Cuando hacemos una consulta, y encontramos un documento, este nos suele mostrar TODOS LOS CAMPOS, pero a veces nosotros no queremos TODOS LOS CAMPOS, así que incluimos en la consulta que es lo que queremos ver, la estructura es así:
+```
+db.nombre_colección.find({
+	Operaciones de consulta
+}, {clave: 1, clave: 1, clave: 1})
+```
+Esencialmente, le vamos a decir que campos si queremos que traiga, marcándolos con 1. Por ejemplo:
+```json
+db.productos.find({
+	$and: [
+		{precio: {$gte: 500}},
+		{precio: {$lte: 1000}}
+	]
+}, {nombre: 1, precio: 1, _id: 0})
+```
+Esto nos devuelve la lista de productos que cumplan con los operadores, pero solamente sus nombres y precios, nada más. Se pone "id: 0", para señalar que no lo queremos.
+# U-pdate, o actualización de documentos
+Ahora, vamos a ver como podremos actualizar los documentos, es esencialmente sencillo.
+## Actualizar un documento
+Para actualizar un documento, vamos a usar **updateOne** y el operador **$set**:
+```json
+db.productos.updateOne(
+	{ nombre: "Laptop Pro X" },
+	{ $set: {precio: 1000} }
+)
+```
+Para reemplazar varios campos:
+```json
+db.productos.updateOne(
+	{ categoria: "Electrodomésticos" },
+	$set: {
+		precio: 1200,
+		disponible: true
+	}
+)
+```
