@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiBookA",
       "LiArchiveRestore",
       "LiArchive",
       "LiSquareRoundCorner",
-      "LiTowerControl",
-      "LiFileStack"
+      "LiTowerControl"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -105,5 +105,9 @@
   "Módulos reutilizables/Análisis, procesamiento, y guardado de archivos.md": {
     "iconName": "LiArchiveRestore",
     "iconColor": "#6e6bef"
+  },
+  "MongoDB/Fundamentos de MongoDB.md": {
+    "iconName": "LiBookA",
+    "iconColor": "#00684a"
   }
 }
