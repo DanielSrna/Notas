@@ -1,0 +1,10 @@
+{
+  "cssTheme": "GitHub Theme",
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "saltos_de_linea",
+    "code_salto"
+  ],
+  "showViewHeader": false,
+  "showRibbon": true
+}

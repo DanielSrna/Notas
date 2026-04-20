@@ -1,0 +1,16 @@
+/* Espaciado para Modo Lectura */
+.markdown-rendered p {
+    margin-bottom: 20px !important;
+}
+
+/* Espaciado para Modo Edición (Live Preview) */
+/* Solo afecta a líneas que NO son listas ni tareas */
+.markdown-source-view.mod-cm6 .cm-line:not(.HyperMD-list-line):not(.HyperMD-task-line) {
+    padding-bottom: 12px !important;
+}
+
+/* Espaciado extra opcional ENTRE elementos de lista (si lo deseas) */
+.HyperMD-list-line {
+    padding-bottom: 4px !important;
+}
+

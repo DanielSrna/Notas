@@ -1,0 +1,109 @@
+{
+  "settings": {
+    "migrated": 6,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "native",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "LiArchiveRestore",
+      "LiArchive",
+      "LiSquareRoundCorner",
+      "LiTowerControl",
+      "LiFileStack"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": false,
+    "iconInTitleEnabled": false,
+    "iconInTitlePosition": "above",
+    "iconInFrontmatterEnabled": false,
+    "iconInFrontmatterFieldName": "icon",
+    "iconColorInFrontmatterFieldName": "iconColor",
+    "iconsBackgroundCheckEnabled": false,
+    "iconsInNotesEnabled": true,
+    "iconsInLinksEnabled": true,
+    "iconIdentifier": ":",
+    "lucideIconPackType": "native",
+    "debugMode": false,
+    "useInternalPlugins": false
+  },
+  "Node.js/Node.js.md": {
+    "iconName": "LiServer",
+    "iconColor": "#31d351"
+  },
+  "Node.js/Conceptos Básicos.md": {
+    "iconName": "LiQuestionMarkGlyph",
+    "iconColor": "#31d351"
+  },
+  "Node.js/Módulos.md": {
+    "iconName": "LiBoxes",
+    "iconColor": "#29d351"
+  },
+  "Node.js/NPM.md": {
+    "iconName": "LiPackage",
+    "iconColor": "#31d351"
+  },
+  "Node.js/JavaScript Asíncrono.md": {
+    "iconName": "LiWatch",
+    "iconColor": "#31d351"
+  },
+  "Node.js/Endpoint.md": {
+    "iconName": "LiWaypoints",
+    "iconColor": "#29d351"
+  },
+  "Node.js/Eventos de Node.js.md": {
+    "iconName": "LiPartyPopper",
+    "iconColor": "#29d351"
+  },
+  "Node.js/Protocolo HTTP.md": {
+    "iconName": "LiListCheck",
+    "iconColor": "#29d351"
+  },
+  "Express/Express.md": {
+    "iconName": "LiWorkflow",
+    "iconColor": "#2cb6f2"
+  },
+  "Express/Arquitectura de un proyecto en Express.md": {
+    "iconName": "LiHouse",
+    "iconColor": "#2cb6f2"
+  },
+  "Express/Routing con Express.md": {
+    "iconName": "LiRoute",
+    "iconColor": "#2cb6f2"
+  },
+  "Express/Middleware.md": {
+    "iconName": "LiShield",
+    "iconColor": "#2cb6f2"
+  },
+  "Express/Express settings.md": {
+    "iconName": "LiSettings",
+    "iconColor": "#2cb6f2"
+  },
+  "Express/Static Files.md": {
+    "iconName": "LiFileStack",
+    "iconColor": "#2cb6f2"
+  },
+  "Express/Controller.md": {
+    "iconName": "LiTowerControl",
+    "iconColor": "#2cb6f2"
+  },
+  "Express/Motores de plantilla.md": {
+    "iconName": "LiSquareRoundCorner",
+    "iconColor": "#2cb6f2"
+  },
+  "Express/Manejo de archivos.md": {
+    "iconName": "LiArchive",
+    "iconColor": "#2cb6f2"
+  },
+  "Módulos reutilizables/Análisis, procesamiento, y guardado de archivos.md": {
+    "iconName": "LiArchiveRestore",
+    "iconColor": "#6e6bef"
+  }
+}
