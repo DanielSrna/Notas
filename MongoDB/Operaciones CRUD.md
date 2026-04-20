@@ -102,6 +102,55 @@ En este caso, trae documentos cuyo campo "precio", tenga un valor menor o igual 
 El operador "distinto a", busca documento cuyo campo operado, tenga un valor distinto al valor del operador, por ejemplo:
 ```json
 db.productos.find({
-	precio: {$lte: 900}
+	precio: {$ne: 900}
 })
 ```
+En este caso, trae documentos cuyo campo "precio", tenga un valor distinto a 900.
+#### Operador "dentro de" ($in)
+El operador "dentro de", busca documentos cuyo campo operado, tenga un valor que este dentro de un rango de valores definidos en el operador, por ejemplo:
+```json
+db.productos.find({
+	precio: {$in: [800, 900]}
+})
+```
+En este caso, trae documentos cuyo campo "precio", tenga un valor que este dentro de 800, y 900, incluyéndolos. 
+#### Operador "no dentro de" ($nin)
+El operador "no dentro de", busca documentos cuyo campo operado, tenga un valor distinto dentro del rango de valores definidos en el operador, por ejemplo:
+```json
+db.productos.find({
+	precio: {$in: [800, 900]}
+})
+```
+En este caso, trae documento cuyo campo "precio", tenga un valor distinto al rango de valores de entre 800, y 900, incluyéndolos.
+## Combinación de operadores
+Podemos hacer que los operadores se combinen para hacer una busqueda aún más especifica. Para ello vamos a usar la siguiente estructura:
+```json
+db.nombre_colección.find({
+	$combinación: [
+		{campo: {$consulta: valor}},
+		{campo: {$consulta: valor}}
+	]
+})
+```
+#### Combinación AND ($and)
+En esta combinación, todos los operadores deben encontrar algo, o sea, todo debe ser true, porque de otra forma, no se muestra nada. Es la combinación más estricta.
+```json
+db.productos.find({
+	$and :[
+		{precio: {$gte: 500}},
+		{precio: {$lte: 1000}}
+	]
+})
+```
+En este caso, buscamos todos los productos cuyos precios sean más de 500, pero menores que 1000. Si alguna de las dos operaciones no encuentra algo, falla la consulta.
+#### Combinación OR ($or)
+En esta combinación, al menos uno de todos los operadores debe encontrar algo, porque de otra forma, no se muestra nada. Es la combinación más flexible, por ejemplo:
+```json
+db.productos.find({
+	$or: [
+		{precio: {$lte: 200}},
+		{categoria: "Electrodomésticos"}
+	]
+})
+```
+En este caso, buscamo
