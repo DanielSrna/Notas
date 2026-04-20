@@ -1,4 +1,4 @@
-Dentro de MongoDB, o bueno, dentro de cualquier base de datos, lo que queremos hacer es algo llamado CRUD, que se define como:
+Dentro de [[MongoDB]], o bueno, dentro de cualquier base de datos, lo que queremos hacer es algo llamado CRUD, que se define como:
 - **C**reate: crear nuevos elementos en la base de datos.
 - **R**ead: leer los elementos en la base de datos.
 - **U**pdate: actualizar los elementos de la base de datos.
@@ -226,4 +226,31 @@ Si tenemos un campo que es un array de elementos, y queremos eliminar uno de ell
 Si queremos eliminar uno, o varios campos de un documento, usamos $unset.
 > [!important] Sobre los operadores
 > Estos operadores se usan todos con **updateOne**, o con **updateMany** si la operación se quiere hacer con varios documentos. Son idénticos al uso de **$set**, solo que su comportamiento sobre los campos es distinto.
+# D-elete, o eliminación de documentos
+Eliminar un documento es una operación MUY IMPORTANTE, así que debes de ser MUY ESPECIFICO en señalar que documento quieres eliminar.
+#### Eliminar un documento
+Para eliminar un documento, usamos **deleteOne**:
+```json
+db.productos.deleteOne(
+	{ nombre: "Monitor Ultrawide 34" }
+)
+```
+#### Eliminar varios documentos
+Para eliminar varios documentos, usamos **deleteMany**:
+```json
+db.productos.deleteMany({
+  _id: { $in: [
+    ObjectId("64fa2a9ef1c233a1d4fddc11"),
+    ObjectId("64fa2aaef1c233a1d4fddc12"),
+    ObjectId("64fa2abff1c233a1d4fddc13")
+  ]}
+});
+```
+#### Eliminar TODOS los documentos (usar solo en pruebas, nunca usar en producción)
+Para eliminar todos los documentos:
+```json
+db.productos.deleteMany({})
+```
+> [!danger] ¡CUIDADO!
+> Cuando vayas a eliminar varios documentos, es MUY IMPORTANTE que lo haga usando el ID de los documentos, o un valor único que los identifique, y diferencie del resto. Porque si lo haces con un valor que todos puedan compartir, vas a arruinar la base de datos.
 
