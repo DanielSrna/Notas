@@ -11,10 +11,14 @@
             "id": "31d6778c0e051ce3",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Vista gráfica"
+              "type": "markdown",
+              "state": {
+                "file": "MongoDB/Transacciones.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Transacciones"
             }
           }
         ]
@@ -206,6 +210,7 @@
   },
   "active": "31d6778c0e051ce3",
   "lastOpenFiles": [
+    "MongoDB/Transacciones.md",
     "MongoDB/Indices.md",
     "MongoDB/MongoDB.md",
     "MongoDB/Aggregation Pipeline.md",
@@ -243,7 +248,6 @@
     "imagenes/Diagram1.svg.xml",
     "imagenes",
     "imagenes/Diagram.svg.xml",
-    "Excalidraw/Drawing 2026-04-08 17.54.26.excalidraw.md",
     "Excalidraw",
     "Node.js"
   ]
