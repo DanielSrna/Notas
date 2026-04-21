@@ -8,4 +8,25 @@ Por ejemplo:
 - Si quisiéramos saber el promedio de ventas de productos a lo largo de un año.
 - Si quisiéramos saber cuanto compran nuestros clientes cada mes en promedio.
 - Si quisiéramos saber de que país vienen más de nuestros productos.
+## Sentencia aggregate([]) 
+Está sentencia es la que vamos a usar en lugar de **.find** o cualquier otra. La estructura es básicamente así:
+```json
+db.colección.aggregate([
+	{
+		// Etapa de match, o filtrado.
+	},
+	{
+		// Etapa de agrupación, y procesamiento.
+	},
+	{
+		// Etapa de ordenamiento.
+	},
+	{
+		// Etapa de presentación.
+	}
+])
+```
 ## Etapas de un aggregation pipeline
+Ahora veamos las cuatro etapas en orden, en realidad es bastante sencillo.
+#### Etapa de filtrado ($match)
+En esta etapa lo que queremos hacer, es agarrar los documentos de una colección, y seleccionar los que nos interesa analizar, para ello vamos a utilizar un campo en común que tenga cada uno. Pero, es importante decir que "campo en común", no quiere decir que tengan el mismo valor, sino, una clave identica. 
