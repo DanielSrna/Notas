@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiSearch",
       "LiDatabase",
       "LiPencil",
       "LiCommand",
-      "LiBookA",
-      "LiArchiveRestore"
+      "LiBookA"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -117,5 +117,6 @@
   "MongoDB/Operaciones CRUD.md": {
     "iconName": "LiPencil",
     "iconColor": "#00684a"
-  }
+  },
+  "MongoDB/Consultas avanzadas.md": "LiSearch"
 }

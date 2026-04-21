@@ -11,10 +11,14 @@
             "id": "030e72c199f48e4e",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Vista gráfica"
+              "type": "markdown",
+              "state": {
+                "file": "MongoDB/Consultas avanzadas.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Consultas avanzadas"
             }
           }
         ]
@@ -206,6 +210,7 @@
   },
   "active": "030e72c199f48e4e",
   "lastOpenFiles": [
+    "MongoDB/Consultas avanzadas.md",
     "MongoDB/Operaciones CRUD.md",
     "MongoDB/MongoDB.md",
     "MongoDB/Comandos básicos de MongoDB.md",
