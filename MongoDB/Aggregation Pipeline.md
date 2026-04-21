@@ -8,4 +8,4 @@ Por ejemplo:
 - Si quisiéramos saber el promedio de ventas de productos a lo largo de un año.
 - Si quisiéramos saber cuanto compran nuestros clientes cada mes en promedio.
 - Si quisiéramos saber de que país vienen más de nuestros productos.
-Como puede notar, el factor en común de todo esto, es que se tiene que compartir al menos un campo en cada documento para poder crear grupos, y analizarlos.
+## Etapas de un aggregation pipeline
