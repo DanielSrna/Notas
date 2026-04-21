@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiFastForward",
       "LiGroup",
       "LiSearch",
       "LiDatabase",
-      "LiPencil",
-      "LiCommand"
+      "LiPencil"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -124,6 +124,10 @@
   },
   "MongoDB/Aggregation Pipeline.md": {
     "iconName": "LiGroup",
+    "iconColor": "#00684a"
+  },
+  "MongoDB/Indices.md": {
+    "iconName": "LiFastForward",
     "iconColor": "#00684a"
   }
 }
