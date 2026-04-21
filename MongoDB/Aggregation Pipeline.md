@@ -29,4 +29,22 @@ db.colección.aggregate([
 ## Etapas de un aggregation pipeline
 Ahora veamos las cuatro etapas en orden, en realidad es bastante sencillo.
 #### Etapa de filtrado ($match)
-En esta etapa lo que queremos hacer, es agarrar los documentos de una colección, y seleccionar los que nos interesa analizar, para ello vamos a utilizar un campo en común que tenga cada uno. Pero, es importante decir que "campo en común", no quiere decir que tengan el mismo valor, sino, una clave identica. 
+En esta etapa lo que queremos hacer, es agarrar los documentos de una colección, y seleccionar los que nos interesa analizar, para ello vamos a utilizar un campo en común que tenga cada uno. Pero, es importante decir que "campo en común", no quiere decir que tengan el mismo valor, sino, una clave idéntica.
+Por ejemplo:
+*Si tenemos una serie de documentos que muestran una cantidad de transacciones, a nosotros nos interesa filtrarlas por fechas, por ejemplo, se pueden extraer de una fecha especifica a otra, como de un año a otro, o hasta de un mes a otro.*
+```json
+db.productos.aggregate([
+	{
+		$match: {
+			fecha: {
+				$gte: new ISODate("2024-01-01T00:00:00Z"), 
+				$lt: new ISODate("2025-01-01T00:00:00Z")
+			}
+		}
+	},
+	{ // Etapa de agrupación, y procesamiento. },
+	{ // Etapa de ordenamiento. },
+	{ // Etapa de presentación. }
+])
+```
+En este caso, nos traemos todos los documentos cuya fecha coincida con los parámetros de busqueda, que en este caso, son todas las compras entre el primero de enero del 2024 incluyéndolo, hasta el primero de enero del 2025, sin incluirlo.
