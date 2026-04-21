@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "c8c8d67827b737d2",
+        "id": "27055f2bc17014fc",
         "type": "tabs",
         "children": [
           {
-            "id": "31d6778c0e051ce3",
+            "id": "a0a31f5f71ee1370",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -208,18 +208,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "31d6778c0e051ce3",
+  "active": "a0a31f5f71ee1370",
   "lastOpenFiles": [
-    "MongoDB/Transacciones.md",
-    "MongoDB/Indices.md",
-    "MongoDB/MongoDB.md",
-    "MongoDB/Aggregation Pipeline.md",
-    "MongoDB/Consultas avanzadas.md",
     "MongoDB/Operaciones CRUD.md",
+    "MongoDB/MongoDB.md",
+    "MongoDB/Indices.md",
+    "MongoDB/Consultas avanzadas.md",
+    "MongoDB/Comandos básicos de MongoDB.md",
+    "MongoDB/Aggregation Pipeline.md",
+    "MongoDB/Transacciones.md",
     "Express/Arquitectura de un proyecto en Express.md",
     "Express/Express.md",
     "Express/Controller.md",
-    "MongoDB/Comandos básicos de MongoDB.md",
     "MongoDB",
     "Módulos reutilizables/Análisis, procesamiento, y guardado de archivos.md",
     "Express/Static Files.md",
