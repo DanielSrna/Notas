@@ -47,7 +47,7 @@ db.productos.find(
 ```
 #### consulta por coincidencia general
 Ahora, no importa donde estén ubicados los caracteres de busqueda, lo importante es que la palabra lo contenga, y ya.
-```
+```json
 db.productos.find({
   nombre: { $regex: /ap/ }
 });
@@ -118,3 +118,20 @@ db.productos.find(
 ```
 ¿Por qué rayos es así? Porque básicamente una colección puede tener documentos que tengan arrays con valores muy parecidos, así que la única forma de ser especifico, es haciendo coincidir varios valores al mismo tiempo.
 ## Consulta por tamaño, y tipo
+Ahora veamos como podemos consultar documentos por su tipo de dato, o por el tamaño del array. Esto definitivamente es algo inusual, pero claro, la opción existe.
+#### consulta por tamaño
+Para este tipo de consultas, vamos a usar el operador **$size**, que nos permite definir un tamaño de elementos en un array como parametro de busqueda.
+```json
+db.productos.find(
+	{ especificaciones: { $size: 3 } }
+)
+```
+Entonces, esto nos va traer todos los documentos que tenga un campo "especificaciones", que tenga un array de 3 elementos.
+#### consulta por tipo
+Para esta consulta se va utilizar el operador **$type**, este nos permite definir un tipo de dato como un parametro de busqueda.
+```json
+db.productos.find(
+	{ precio: { $type: "string" } }
+)
+```
+Entonces nos trae cualquier documento que tenga un campo "precio" que tenga el valor en strings. 

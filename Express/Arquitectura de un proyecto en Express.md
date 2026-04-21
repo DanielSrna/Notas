@@ -29,7 +29,7 @@ mi-proyecto/
     │   ├── emailService.js
     │   └── pdfGenerator.js
     │
-    ├── subscribers/      # 🎧 Los escuchadores de eventos (Lo de ayer)
+    ├── subscribers/      # 🎧 Los escuchadores de eventos
     │   ├── index.js      # El archivo que importa todos los suscriptores
     │   └── notification.subscriber.js
     │

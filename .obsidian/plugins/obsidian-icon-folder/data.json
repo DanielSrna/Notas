@@ -118,5 +118,8 @@
     "iconName": "LiPencil",
     "iconColor": "#00684a"
   },
-  "MongoDB/Consultas avanzadas.md": "LiSearch"
+  "MongoDB/Consultas avanzadas.md": {
+    "iconName": "LiSearch",
+    "iconColor": "#00684a"
+  }
 }
