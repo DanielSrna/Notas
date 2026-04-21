@@ -19,10 +19,10 @@ db.colección.aggregate([
 		// Etapa de agrupación, y procesamiento.
 	},
 	{
-		// Etapa de ordenamiento.
+		// Etapa de presentación.
 	},
 	{
-		// Etapa de presentación.
+		// Etapa de ordenamiento.
 	}
 ])
 ```
@@ -43,8 +43,8 @@ db.productos.aggregate([
 		}
 	},
 	{ // Etapa de agrupación, y procesamiento. },
-	{ // Etapa de ordenamiento. },
-	{ // Etapa de presentación. }
+	{ // Etapa de presentación. },
+	{ // Etapa de ordenamiento. }
 ])
 ```
 En este caso, nos traemos todos los documentos cuya fecha coincida con los parámetros de busqueda, que en este caso, son todas las compras entre el primero de enero del 2024 incluyéndolo, hasta el primero de enero del 2025, sin incluirlo.
@@ -59,8 +59,8 @@ db.productos.aggregate([
 			_id: { month: { $month: "$fecha" } }
 		}
 	},
-	{ // Etapa de ordenamiento. },
-	{ // Etapa de presentación. }
+	{ // Etapa de presentación. },
+	{ // Etapa de ordenamiento. }
 ])
 ```
 > [!info] ¿Qué rayos es eso?
@@ -79,8 +79,8 @@ db.productos.aggregate([
 			cantidad_productos_vendidos: { $sum: { "$cantidad" } }
 		}
 	},
-	{ // Etapa de ordenamiento. },
-	{ // Etapa de presentación. }
+	{ // Etapa de presentación. },
+	{ // Etapa de ordenamiento. }
 ])
 ```
 Bine, aquí hicimos varias cosas que vale la pena señalar:
@@ -88,3 +88,36 @@ Bine, aquí hicimos varias cosas que vale la pena señalar:
 - Hemos usado operadores matemáticos, para operar campos específicos de cada grupo.
 - Como podemos notar, para llamar a los campos, lo hemos hecho con un "$".
 - El orden de las operaciones está directamente asociado por el nivel de anidamiento. Si una operación está dentro de otra, se empieza a resolver la que está más adentro.
+Ahora, veamos que operadores podemos usar aquí:
+- **`$avg`**: Calcula el promedio.
+- **`$min` / `$max`**: Encuentra el valor más bajo o más alto.
+- **`$push`**: Crea un **array** con todos los valores de un campo.
+- **`$first` / `$last`**: Toma el primer o último valor que entra al grupo.
+- **`$subtract`**: Resta dos números.
+- **`$divide`**: Para sacar porcentajes o ratios.
+- **`$round`**: Para que los precios no te salgan con mil decimales.
+#### Etapa de presentación
+Está etapa es sencilla, simplemente vamos a definir que queremos que se muestre, y que no queremos que se muestre. Cuando fijamos que queremos que algo se muestre, automáticamente el resto de campos desaparecen, así que en ese caso debemos definir que es todo lo que queremos mostrar.
+```json
+db.productos.aggregate([
+	{
+		$project: {
+			_id: 0, //no nos interesa ver el ID.
+			mes: "$_id.month", // Si nos interesa ver el mes
+			ingresos_totales: 1, //1 significa "incluido"
+			cantidad_productos_vendidos: 1
+		}
+	}
+])
+```
+#### Etapa de ordenamiento
+Aquí vamos a definir como queremos que se ordene esto. Si seguimos nuestro ejemplo, podemos hacer que se ordene por un orden ascendente, o descendente según el numero del mes, u ordenarlos por quien ha tenido más ingresos totales, o por cual mes ha vendido más productos.
+```json
+db.productos.aggregate([
+	{
+		$sort: {
+			ingresos_totales: -1
+		}
+	}
+])
+```
