@@ -48,3 +48,18 @@ db.productos.aggregate([
 ])
 ```
 En este caso, nos traemos todos los documentos cuya fecha coincida con los parámetros de busqueda, que en este caso, son todas las compras entre el primero de enero del 2024 incluyéndolo, hasta el primero de enero del 2025, sin incluirlo.
+#### Etapa de agrupación, y procesamiento
+En está etapa vamos a decidir como agrupar los documentos que **$match** nos ha ofrecido, y como nos ha ofrecido un rango de fechas, pues, podemos usar meses por ejemplo.
+Si tenemos unos 30 documentos, o más, por así decirlo, se empiezan a separar en 12 grupos distintos, cada documento va en su respectivo grupo. Algo así se ve:
+```json
+db.productos.aggregate([
+	{ // Etapa de filtrado. },
+	{
+		$group: {
+			_id: { month: { $month: "$fecha" } }
+		}
+	},
+	{ // Etapa de ordenamiento. },
+	{ // Etapa de presentación. }
+])
+```
