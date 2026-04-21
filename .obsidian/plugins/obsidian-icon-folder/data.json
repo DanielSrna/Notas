@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiGroup",
       "LiSearch",
       "LiDatabase",
       "LiPencil",
-      "LiCommand",
-      "LiBookA"
+      "LiCommand"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -120,6 +120,10 @@
   },
   "MongoDB/Consultas avanzadas.md": {
     "iconName": "LiSearch",
+    "iconColor": "#00684a"
+  },
+  "MongoDB/Aggregation Pipeline.md": {
+    "iconName": "LiGroup",
     "iconColor": "#00684a"
   }
 }
