@@ -68,3 +68,53 @@ db.productos.find({
 > [!tip] Sobre las mayúsculas
 > Supongamos que las palabras contienen letras en mayúsculas, o nuestra busqueda las contiene, en este caso no se va poder encontrar nada porque las búsquedas de este tipo son sensibles a las mayúsculas, para desactivar eso:
 > 
+> `{json}nombre: { $regex: /OL/, $options: "i" }`
+## Consultas anidadas, y arreglos
+Ahora, vamos a ver como consultar dentro de estructuras complejas de JSON, es bastante sencillo en realidad. Supongamos la siguiente colección:
+```json
+[
+  {
+    "nombre": "Laptop Gamer Z",
+    "especificaciones": [
+      { "componente": "RAM", "valor": 16 },
+      { "componente": "CPU", "valor": 8 },
+      { "componente": "GPU", "valor": 12 }
+    ],
+    "caracteristicas": {
+      "color": "negro",
+      "altura": 60,
+      "chasis": "gamer"
+    }
+  },
+  {
+    "nombre": "Laptop Gamer X",
+    "especificaciones": [
+      { "componente": "RAM", "valor": 24 },
+      { "componente": "CPU", "valor": 6 },
+      { "componente": "GPU", "valor": 8 }
+    ],
+    "caracteristicas": {
+      "color": "blanco",
+      "altura": 50,
+      "chasis": "oficina"
+    }
+  }
+]
+```
+#### consulta de datos anidados
+Para esto vamos a considerar la "dot notation" o la misma forma en como exploramos objetos dentro de JavaScript. Es realmente sencillo.
+```json
+db.productos.find(
+	{ "caracteristicas.color": "negro" }
+)
+```
+En este caso, nos trae el documento que tenga un documento anidado llamado "características" que contenga un campo "color" con el valor de "negro", sería **"Laptop Gamer Z"**.
+#### consulta de datos en un arreglo
+Ahora, este es un poco más complejo, pero debemos de hacer uso del operador **$elemMatch**.
+```json
+db.productos.find(
+	{ especificaciones: { $elemMatch: { componente: "RAM", valor: 16 } } }
+)
+```
+¿Por qué rayos es así? Porque básicamente una colección puede tener documentos que tengan arrays con valores muy parecidos, así que la única forma de ser especifico, es haciendo coincidir varios valores al mismo tiempo.
+## Consulta por tamaño, y tipo
