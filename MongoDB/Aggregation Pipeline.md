@@ -50,13 +50,33 @@ db.productos.aggregate([
 En este caso, nos traemos todos los documentos cuya fecha coincida con los parámetros de busqueda, que en este caso, son todas las compras entre el primero de enero del 2024 incluyéndolo, hasta el primero de enero del 2025, sin incluirlo.
 #### Etapa de agrupación, y procesamiento
 En está etapa vamos a decidir como agrupar los documentos que **$match** nos ha ofrecido, y como nos ha ofrecido un rango de fechas, pues, podemos usar meses por ejemplo.
-Si tenemos unos 30 documentos, o más, por así decirlo, se empiezan a separar en 12 grupos distintos, cada documento va en su respectivo grupo. Algo así se ve:
+Si tenemos unos 30 documentos, o más, por así decirlo, se empiezan a separar en 12 grupos distintos, cada documento va en su respectivo grupo.
 ```json
 db.productos.aggregate([
 	{ // Etapa de filtrado. },
 	{
 		$group: {
 			_id: { month: { $month: "$fecha" } }
+		}
+	},
+	{ // Etapa de ordenamiento. },
+	{ // Etapa de presentación. }
+])
+```
+> [!info] ¿Qué rayos es eso?
+> Te preguntaras, ¿Qué rayos es esa estructura? O sea, está costa de aquí:
+`{json}_id: { month: { $month: "$fecha" } }`
+Es sencillo, lo que pasa, es que en esta etapa de agrupación, y procesamiento, vamos a crear variables que vamos a llenar con información. Entonces, ese `{json}month: { $month: "$fecha" }` es una forma se agregar de una vez el número del mes a una variable llamada "month", porque podríamos simplemente hacer la agrupación con `{json}_id: { $month: "$fecha" }`, pero entonces luego, ¿Cómo rayos vamos a saber que significa el número de "_id"?
+
+Bien, ya podemos pasar al procesamiento, es bastante sencillo:
+```javascript
+db.productos.aggregate([
+	{ // Etapa de filtrado. },
+	{
+		$group: {
+			_id: { month: { $month: "$fecha" } },
+			ingresos_totales: { $sum: { $multiply: ["$cantidad", "$precio_unitario"] } }, 
+			cantidad_productos_vendidos: { $sum: { "$cantidad" } }
 		}
 	},
 	{ // Etapa de ordenamiento. },
