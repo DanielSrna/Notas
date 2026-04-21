@@ -83,3 +83,8 @@ db.productos.aggregate([
 	{ // Etapa de presentación. }
 ])
 ```
+Bine, aquí hicimos varias cosas que vale la pena señalar:
+- Hemos creado más variables. Ahora no solo la variable month contiene un valor, sino, otras dos variables más.
+- Hemos usado operadores matemáticos, para operar campos específicos de cada grupo.
+- Como podemos notar, para llamar a los campos, lo hemos hecho con un "$".
+- El orden de las operaciones está directamente asociado por el nivel de anidamiento. Si una operación está dentro de otra, se empieza a resolver la que está más adentro.
