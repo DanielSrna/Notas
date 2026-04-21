@@ -252,4 +252,71 @@ Nos devuelve:
   }
 ]
 ```
-## Etapas extra (limitació)
+## Etapas extra (limitación, y saltos)
+Ahora, como podemos notar, nos dio todos los documentos, pero, ¿Qué pasa si consultamos una colección que tiene miles de documentos, y agrupamos cientos de ellos? Simplemente la respuesta va ser GIGANTE, e inmanejable. 
+#### Limitación
+Podemos limitar la cantidad de elementos que nos muestren, para ello agregamos una quinta etapa:
+```json
+db.ventas.aggregate([
+	{//Buscamos todas las ventas hechas en 2024
+		$match: {
+			fecha: {
+        $gte: ISODate("2024-01-01T00:00:00Z"),
+        $lt: ISODate("2025-01-01T00:00:00Z"),
+			},
+		},
+	},
+	
+	{//Ordenamos los precios de menor a mayor
+		$sort: {
+			precio_unitario: 1-
+		},
+	},
+	{//Mostramos solo el nombre, y el precio del producto
+		$project: {
+			_id: 0,
+			producto: 1,
+			precio_unitario: 1,
+		}
+	},
+	{//Limitamos el resultado a 5
+		$limit: 5
+	},
+])
+```
+#### Salto
+Ahora, ya nos muestra solo 5 resultados, excelente, pero, ¿Cómo vemos el resto? Pues, saltando esos 5 con un skip:
+```json
+db.ventas.aggregate([
+	{//Buscamos todas las ventas hechas en 2024
+		$match: {
+			fecha: {
+        $gte: ISODate("2024-01-01T00:00:00Z"),
+        $lt: ISODate("2025-01-01T00:00:00Z"),
+			},
+		},
+	},
+	
+	{//Ordenamos los precios de menor a mayor
+		$sort: {
+			precio_unitario: 1-
+		},
+	},
+	{//Mostramos solo el nombre, y el precio del producto
+		$project: {
+			_id: 0,
+			producto: 1,
+			precio_unitario: 1,
+		}
+	},
+	{//Saltamos los primeros 5 documentos
+	$skip: 5 
+	},
+	{//Limitamos el resultado a 5
+		$limit: 5
+	},
+])
+```
+> [!info] Sobre saltos, y limites
+> Si manejan esos saltos, y limites de forma dinámica con las peticiones del cliente, pueden hacer una paginación tremenda. 
+
