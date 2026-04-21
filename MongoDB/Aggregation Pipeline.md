@@ -121,3 +121,135 @@ db.productos.aggregate([
 	}
 ])
 ```
+## Ejemplo final
+Ahora veamos un ejemplo final, está es la colección:
+```json
+[
+  { "producto": "Laptop Gamer",         "cantidad": 1,  "precio_unitario": 1200, "fecha": ISODate("2024-01-15T10:00:00Z") },
+  { "producto": "Mouse Inalámbrico",    "cantidad": 5,  "precio_unitario": 25,   "fecha": ISODate("2024-01-20T11:30:00Z") },
+  { "producto": "Teclado Mecánico",     "cantidad": 2,  "precio_unitario": 80,   "fecha": ISODate("2024-02-05T14:45:00Z") },
+  { "producto": "Laptop Ultrabook",     "cantidad": 1,  "precio_unitario": 1500, "fecha": ISODate("2024-02-10T09:00:00Z") },
+  { "producto": "Webcam 4K",            "cantidad": 3,  "precio_unitario": 100,  "fecha": ISODate("2024-03-25T16:20:00Z") },
+  { "producto": "Monitor 27''",         "cantidad": 2,  "precio_unitario": 300,  "fecha": ISODate("2024-04-05T10:15:00Z") },
+  { "producto": "Disco SSD 1TB",        "cantidad": 4,  "precio_unitario": 130,  "fecha": ISODate("2024-05-12T13:45:00Z") },
+  { "producto": "Tablet Android",       "cantidad": 1,  "precio_unitario": 400,  "fecha": ISODate("2024-06-01T15:00:00Z") },
+  { "producto": "Router WiFi 6",        "cantidad": 3,  "precio_unitario": 90,   "fecha": ISODate("2024-06-18T11:10:00Z") },
+  { "producto": "Auriculares Bluetooth","cantidad": 6,  "precio_unitario": 60,   "fecha": ISODate("2024-07-10T12:30:00Z") },
+  { "producto": "Silla Ergonómica",     "cantidad": 2,  "precio_unitario": 250,  "fecha": ISODate("2024-08-22T09:00:00Z") },
+  { "producto": "Hub USB-C",            "cantidad": 5,  "precio_unitario": 40,   "fecha": ISODate("2024-09-15T13:15:00Z") },
+  { "producto": "Cámara de Seguridad",  "cantidad": 3,  "precio_unitario": 150,  "fecha": ISODate("2024-10-05T08:50:00Z") },
+  { "producto": "Impresora Láser",      "cantidad": 1,  "precio_unitario": 300,  "fecha": ISODate("2024-11-25T17:20:00Z") },
+  { "producto": "Disco Duro 2TB",       "cantidad": 2,  "precio_unitario": 110,  "fecha": ISODate("2024-12-10T16:40:00Z") },
+  { "producto": "Laptop Gamer",         "cantidad": 1,  "precio_unitario": 1250, "fecha": ISODate("2025-01-12T10:00:00Z") },
+  { "producto": "Teclado Mecánico",     "cantidad": 3,  "precio_unitario": 85,   "fecha": ISODate("2025-01-20T12:00:00Z") },
+  { "producto": "Monitor 27''",         "cantidad": 1,  "precio_unitario": 310,  "fecha": ISODate("2025-02-05T11:30:00Z") },
+  { "producto": "Tablet Android",       "cantidad": 2,  "precio_unitario": 420,  "fecha": ISODate("2025-02-15T14:10:00Z") },
+  { "producto": "Auriculares Bluetooth","cantidad": 4,  "precio_unitario": 65,   "fecha": ISODate("2025-03-08T09:45:00Z") },
+  { "producto": "Silla Ergonómica",     "cantidad": 1,  "precio_unitario": 260,  "fecha": ISODate("2025-04-01T13:05:00Z") },
+  { "producto": "Laptop Ultrabook",     "cantidad": 1,  "precio_unitario": 1550, "fecha": ISODate("2025-04-22T15:25:00Z") },
+  { "producto": "Hub USB-C",            "cantidad": 7,  "precio_unitario": 45,   "fecha": ISODate("2025-05-10T16:55:00Z") },
+  { "producto": "Disco SSD 1TB",        "cantidad": 2,  "precio_unitario": 140,  "fecha": ISODate("2025-06-03T10:10:00Z") },
+  { "producto": "Router WiFi 6",        "cantidad": 4,  "precio_unitario": 95,   "fecha": ISODate("2025-07-01T11:40:00Z") }
+]
+```
+Y este es el aggregation pipeline que hemos construido:
+```json
+db.productos.aggregate([
+  {
+    $match: {
+      fecha: {
+        $gte: new ISODate("2024-01-01T00:00:00Z"),
+        $lt: new ISODate("2025-01-01T00:00:00Z"),
+      },
+    },
+  },
+  {
+    $group: {
+      _id: {
+        month: { $month: "$fecha" },
+      },
+      total_ventas: { $sum: { $multiply: ["$cantidad", "$precio_unitario"] } },
+      total_productos: { $sum: "$cantidad" },
+    },
+  },
+  {
+    $project: {
+      mes: "$_id.month",
+      total_ventas: 1,
+      total_productos: 1,
+      _id: 0,
+    },
+  },
+  {
+    $sort: {
+      total_ventas: -1,
+    },
+  },
+]);
+```
+Nos devuelve:
+```json
+[
+  {
+    "total_ventas": 1660,
+    "total_productos": 3,
+    "mes": 2
+  },
+  {
+    "total_ventas": 1325,
+    "total_productos": 6,
+    "mes": 1
+  },
+  {
+    "total_ventas": 670,
+    "total_productos": 4,
+    "mes": 6
+  },
+  {
+    "total_ventas": 600,
+    "total_productos": 2,
+    "mes": 4
+  },
+  {
+    "total_ventas": 520,
+    "total_productos": 4,
+    "mes": 5
+  },
+  {
+    "total_ventas": 500,
+    "total_productos": 2,
+    "mes": 8
+  },
+  {
+    "total_ventas": 450,
+    "total_productos": 3,
+    "mes": 10
+  },
+  {
+    "total_ventas": 360,
+    "total_productos": 6,
+    "mes": 7
+  },
+  {
+    "total_ventas": 300,
+    "total_productos": 1,
+    "mes": 11
+  },
+  {
+    "total_ventas": 300,
+    "total_productos": 3,
+    "mes": 3
+  },
+  {
+    "total_ventas": 220,
+    "total_productos": 2,
+    "mes": 12
+  },
+  {
+    "total_ventas": 200,
+    "total_productos": 5,
+    "mes": 9
+  }
+]
+```
+## Etapas extra (limitació)
