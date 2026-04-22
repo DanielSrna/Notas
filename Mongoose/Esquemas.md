@@ -1,4 +1,4 @@
-El chiste principal de Mongoose, es que permite crear esquemas, que se tratan esencialmente de una serie de reglas que le ponemos a las colecciones, para que los documentos alojados en ella sigan todos las mismas reglas, y podamos encontrar completa regularidad en las estructuras de estos.
+El chiste principal de [[Mongoose]], es que permite crear esquemas, que se tratan esencialmente de una serie de reglas que le ponemos a las colecciones, para que los documentos alojados en ella sigan todos las mismas reglas, y podamos encontrar completa regularidad en las estructuras de estos.
 Sin los esquemas, almacenar información en Mongoose sería un caos, podría almacenar un JSON hell, y al lado almacenar una dirección, etc.
 # ¿Qué se debe considerar al iniciar un esquema?
 Bueno, lo que debemos considerar, aunque suene algo abstracto, son todos los campos que necesitamos del documento, por ejemplo:
@@ -136,4 +136,9 @@ const UsersSchema = new mongoose.Schema({
     }
 })
 ```
-Finalmente d
+Al final del archivo, podemos alojar el esquema en una constante para hacer uso de este:
+```json
+const User = mongoose.model('User', userSchema);
+// Exportamos
+module.exports = User
+```
