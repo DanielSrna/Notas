@@ -15,10 +15,13 @@ User.create([
 La lectura solo se hace mediante **.find**, y ya, aunque se agregan nuevos valores que pueden facilitar las cosas:
 ```json
 const jovenesConDinero = await User.find()
-  .where('age').lt(30)
-  .where('balance').gt(1000)
-  .where('status').equals('active')
-  .exec();
+  .where('age').lt(30) // Los documentos deben tener <30 en agre
+  .where('balance').gt(1000) // Los documentos deben tener >1000 en balance
+  .where('status').equals('active') // los documentos deben status = active
+  .skip(10) // nos saltamos los 10 primeros documentos
+  .limit(10) // Solo 10 documentos
+  .sort('-balanace') // organiza de mayor a menor en cuanto a dinero
+  .exec(); // Lanza la consulta
 ```
 La estructura de **where** es sencilla:
 ```json
@@ -40,3 +43,27 @@ Ahí es en donde vamos a poner los criterio de busqueda, los operadores son:
 **Lógica y existencia**
 - `.exists(true/false)`: Busca documentos donde el campo existe (o no).
 - `.mod([divisor, resto])`: Para operaciones aritméticas de módulo.
+#### Paginación
+Como vimos tenemos **skip** y **limit**, dos herramientas poderosas que pueden hacer magia junta, se suelen usar así:
+```javascript
+const pagina = 2;
+const porPagina = 10;
+
+const resultados = await User.find()
+  .skip((pagina - 1) * porPagina) // Te saltas los de la página anterior
+  .limit(porPagina)     // Limitas la cantidad actual
+```
+# Actualización
+Actualizar también es sencillo, vamos a guiarnos bajo la lógica de:
+- **Criterio:** es el valor por el cual vamos a encontrar uno, o varios documentos.
+- **Nuevo valor**: es el nuevo valor que vamos a actualizar.
+Ahora veamos como funciona:
+**Model.updateOne({criterio},{nuevo contenido}):** Busca el primer documento que coincida, y le cambia el valor definido en el campo.
+```javascript
+Model.updateOne({'60c72b2f9f1b9e001f3f4c6b'}, {nombre: "ana"});
+```
+**Model.updateMany({criterio},{nuevo contenido}):** Busca todos los documentos que coincidan, y les cambia el valor definido en el campo.
+```javascript
+Model.updateMany({barrio: "Alameda"},{estrato: 3});
+```
+**Model.findOneAndUpdate({criterio}, {nuevo contenido}, {new}):** Busca el primer documento que coincida, lo actualiza, y lo devuelve como si fuera una lectura.
