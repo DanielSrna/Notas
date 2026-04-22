@@ -134,5 +134,8 @@
     "iconName": "LiBomb",
     "iconColor": "#00684a"
   },
-  "MongoDB/MongoDB Atlas.md": "LiShield"
+  "MongoDB/MongoDB Atlas.md": {
+    "iconName": "LiShield",
+    "iconColor": "#00684a"
+  }
 }

@@ -1,4 +1,4 @@
-Ahora veamos algo mucho más avanzado dentro de MongoDB, y es su servicio de Atlas. Se trata básicamente de una base de datos externa en la nube, esto nos da un conjunto gigante de beneficios:
+Ahora veamos algo mucho más avanzado dentro de [[MongoDB]], y es su servicio de Atlas. Se trata básicamente de una base de datos externa en la nube, esto nos da un conjunto gigante de beneficios:
 1. La seguridad de donde se aloja la base de datos, ahora está en manos de una corporación, y no de nosotros.
 2. Prácticamente todo está configurado siempre con las mejores practicas.
 3. TODO tiene una interfaz, ya no hay que usar absolutamente ningún comando para configurar algo de la base de datos.
@@ -10,4 +10,9 @@ Es bastante simple, vamos a hacer un tutorial para el día 22 de abril del 2026,
 Supongo que no es necesario que explique esto, ¿No?
 #### Creamos un cluster
 Tienes que usar la capa gratuita, aunque si quieres puedes empezar a pagar obviamente. Esto es tan sencillo que no vale la pena realmente entrar en detalles, todo está en la interfaz.
+#### Conexión
+Ahora, es tan sencillo como darle al botón conectar, y luego "Driver" aunque nosotros vamos a usar mongoose. Una vez ahí obtenemos el enlace de conexión, y listo.
+> [!info] ¿Qué sigue?
+> Bueno, lo que sigue está en el curso de Mongoose, así que ir ahí a revisar.
+
 
