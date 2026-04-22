@@ -1,5 +1,5 @@
 En [[MongoDB]] además de las consultas tradicionales, también tenemos consultas avanzadas, que permiten un poco más de flexibilidad en cuanto a encontrar contenido.
-Para todas las siguientes consultas nos vamos a valer de **.find**, así que es muy importante repasar el contenido de [[Operaciones CRUD]].
+Para todas las siguientes consultas nos vamos a valer de **.find**, así que es muy importante repasar el contenido de [[MongoDB/Operaciones CRUD]].
 ## consultas con expresiones regulares
 Las expresiones regulares son muy útiles para analizar el contenido de un texto, y aún más si lo usamos para buscar cosas, veamos como se pueden aplicar. Para estás consultas nos vamos a valer del operador **$regex**. Ahora, tomemos el siguiente ejemplo de colección:
 ```json
