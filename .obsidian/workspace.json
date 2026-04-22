@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MongoDB/Transacciones.md",
+                "file": "MongoDB/MongoDB Atlas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Transacciones"
+              "title": "MongoDB Atlas"
             }
           }
         ]
@@ -208,15 +208,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a0a31f5f71ee1370",
+  "active": "875453812ad4524f",
   "lastOpenFiles": [
+    "MongoDB/Transacciones.md",
+    "MongoDB/MongoDB Atlas.md",
     "MongoDB/Operaciones CRUD.md",
     "MongoDB/MongoDB.md",
     "MongoDB/Indices.md",
     "MongoDB/Consultas avanzadas.md",
     "MongoDB/Comandos básicos de MongoDB.md",
     "MongoDB/Aggregation Pipeline.md",
-    "MongoDB/Transacciones.md",
     "Express/Arquitectura de un proyecto en Express.md",
     "Express/Express.md",
     "Express/Controller.md",
@@ -242,7 +243,6 @@
     "Node.js/Módulos.md",
     "Node.js/JavaScript Asíncrono.md",
     "Node.js/Conceptos Básicos.md",
-    "Node.js,.md",
     "imagenes/Diagram1.svg",
     "imagenes/Diagram.svg",
     "imagenes/Diagram1.svg.xml",
