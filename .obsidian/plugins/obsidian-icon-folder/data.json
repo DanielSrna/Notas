@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiPencilRuler",
       "LiConstruction",
       "LiToolCase",
       "LiShield",
-      "LiBomb",
-      "LiFastForward"
+      "LiBomb"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -144,6 +144,10 @@
   },
   "Mongoose/Esquemas.md": {
     "iconName": "LiConstruction",
+    "iconColor": "#97d219"
+  },
+  "Mongoose/Operaciones CRUD.md": {
+    "iconName": "LiPencilRuler",
     "iconColor": "#97d219"
   }
 }

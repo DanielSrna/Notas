@@ -34,6 +34,13 @@
         "a": 1,
         "rgb": 9949721
       }
+    },
+    {
+      "query": "path:\"Módulos reutilizables\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 7236591
+      }
     }
   ],
   "collapse-display": true,
@@ -46,6 +53,6 @@
   "repelStrength": 12.0833333333333,
   "linkStrength": 0.416666666666667,
   "linkDistance": 30,
-  "scale": 0.29629629629629495,
+  "scale": 0.45050811767578125,
   "close": true
 }

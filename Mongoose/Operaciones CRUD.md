@@ -1,4 +1,4 @@
-Dentro de Mongoose, las operaciones CRUD son extremadamente más sencillas que dentro de MongoDB, empecemos de una vez.
+Dentro de [[Mongoose]], las operaciones CRUD son extremadamente más sencillas que dentro de MongoDB, empecemos de una vez.
 # Escritura
 Para crear documentos en Mongoose, usamos la siguiente estructura:
 ```javascript
@@ -67,3 +67,38 @@ Model.updateOne({'60c72b2f9f1b9e001f3f4c6b'}, {nombre: "ana"});
 Model.updateMany({barrio: "Alameda"},{estrato: 3});
 ```
 **Model.findOneAndUpdate({criterio}, {nuevo contenido}, {new}):** Busca el primer documento que coincida, lo actualiza, y lo devuelve como si fuera una lectura.
+```javascript
+Model.findOneAndUpdate({"60c72b2f9f1b9e001f3f4c6b"},{nombre: "ana"},{new: true})
+//Si ponemos true en new, va traer el documento
+//actualizado, si no lo incluimos, o lo ponemos false
+//nos trae el viejo.
+```
+**Model.findByIdAndUpdate({id}, {nuevo contenido}, {new}):** hace lo mismo que el anterior, solo que el criterio es un ID.
+```javascript
+Model.findByIdAndUpdate({"60c72b2f9f1b9e001f3f4c6b"},{nombre: "ana"},{new: true})
+```
+**Model.replaceOne({criterio}, {nuevo contenido}):** actualiza el contenido especificado, y el resto lo borra.
+```javascript
+Model.replaceOne(
+{"60c72b2f9f1b9e001f3f4c6b"},
+{nombre: "ana", edad: 27, estrato: 3, barrio: "alcasar"}
+)
+```
+# Eliminación
+Veamos, es bastante sencillo:
+**Model.deleteOne({criterio}):** elimina el primer documento que coincida con el criterio.
+```javascript
+Model.deleteOne({nombre: ana, edad: 27})
+```
+**Model.deleteMany({criterio}):** elimina todos los documentos que coincidan.
+```javascript
+Model.deleteMany({ edad: { $gt: 60 } })
+```
+**Model.findOneAndDelete({criterio}):** elimina el primer documento que coincida, y luego lo devuelve para que lo veamos. Obviamente ya no podemos hacer nada por el, es más informativo.
+```javascript
+Model.findOneAndDelete({{nombre: ana, edad: 27}})
+```
+**Model.findByIdAndDelete({criterio}):** hace lo mismo que el anterior, solo que ahora el criterio es un ID.
+```javascript
+Model.findByIdAndDelete({"60c72b2f9f1b9e001f3f4c6b"})
+```
