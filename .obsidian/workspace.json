@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mongoose/Introducción a Mongoose.md",
+                "file": "Mongoose/Esquemas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Introducción a Mongoose"
+              "title": "Esquemas"
             }
           }
         ]
@@ -210,7 +210,9 @@
   },
   "active": "a0a31f5f71ee1370",
   "lastOpenFiles": [
-    "Mongoose/Introducción a Mongoose.md",
+    "Mongoose/Mongoose.md",
+    "Mongoose/Esquemas.md",
+    "Pasted image 20260422153142.png",
     "Mongoose",
     "MongoDB/MongoDB Atlas.md",
     "MongoDB/Transacciones.md",
@@ -243,7 +245,6 @@
     "Node.js/Eventos de Node.js.md",
     "Node.js/Endpoint.md",
     "Node.js/Módulos.md",
-    "Node.js/JavaScript Asíncrono.md",
     "imagenes/Diagram1.svg",
     "imagenes/Diagram.svg",
     "imagenes/Diagram1.svg.xml",

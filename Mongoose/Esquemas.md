@@ -1,0 +1,1 @@
+El chiste principal de Mongoose, es que permite crear esquemas, que se tratan esencialmente de una serie de reglas que le ponemos a las colecciones, para que los documentos alojados en ella sean

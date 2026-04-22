@@ -1,3 +1,0 @@
-Mongoose es la herramienta más fiable para trabajar con bases de datos MongoDB dentro de Node.js, ya que permite crear criterios muy sólidos, y reglas. Veamos sus beneficios:
-1. Se usa algo llamado "Modelos", que son básicamente un esquema de como deben ser los documentos dentro de cada colección, haciendo que se deban respetar reglas, y no dejando pasar cuanto JSON se vaya a meter.
-2. Permite realizar operaciones antes, durante, y después de una operación principal, haciendo las cosas mucho más sencillas para limpiar dat

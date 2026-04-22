@@ -27,6 +27,13 @@
         "a": 1,
         "rgb": 26698
       }
+    },
+    {
+      "query": "path:Mongoose  ",
+      "color": {
+        "a": 1,
+        "rgb": 9949721
+      }
     }
   ],
   "collapse-display": true,
@@ -39,6 +46,6 @@
   "repelStrength": 12.0833333333333,
   "linkStrength": 0.416666666666667,
   "linkDistance": 30,
-  "scale": 0.296296296296295,
+  "scale": 0.29629629629629495,
   "close": true
 }

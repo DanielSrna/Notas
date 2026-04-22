@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiToolCase",
       "LiShield",
       "LiBomb",
       "LiFastForward",
-      "LiGroup",
-      "LiSearch"
+      "LiGroup"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -137,5 +137,9 @@
   "MongoDB/MongoDB Atlas.md": {
     "iconName": "LiShield",
     "iconColor": "#00684a"
+  },
+  "Mongoose/Mongoose.md": {
+    "iconName": "LiToolCase",
+    "iconColor": "#97d219"
   }
 }
