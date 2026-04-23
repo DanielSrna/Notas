@@ -19,3 +19,20 @@ const limiter = rateLimit({
 
 module.exports = limiter
 ```
+Finalmente, tenemos dos opciones. La primera es aplicar el limitador a todas las rutas, y para eso lo importamos en el archivo final del proyecto:
+```javascript
+const limiter = require("./services/limiter.js")
+
+//Podemos aplicarlo a todas las peticiones:
+app.use(limiter)
+
+/*Rutas*/
+```
+La otra es aplicarlo a una sola ruta:
+```javascript
+const limiter = require("./services/limiter.js")
+
+router.post("/api/login", limiter, (req, res) => {
+	/*Lógica*/
+})
+```
