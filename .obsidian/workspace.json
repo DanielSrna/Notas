@@ -11,14 +11,10 @@
             "id": "858a7c0cd137522e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Manejo de errores/http-errors.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "http-errors"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Vista gráfica"
             }
           }
         ]
@@ -210,6 +206,8 @@
   },
   "active": "858a7c0cd137522e",
   "lastOpenFiles": [
+    "Módulos reutilizables/Manejador global de errores.md",
+    "Manejo de errores/Sin título.md",
     "Manejo de errores/http-errors.md",
     "Seguridad/NoCache.md",
     "Manejo de errores",
@@ -240,10 +238,8 @@
     "Express/Static Files.md",
     "Express/Manejo de archivos.md",
     "Módulos reutilizables",
-    "Express/Motores de plantilla.md",
     "imagenes/Pasted image 20260417180621.png",
     "imagenes/Pasted image 20260417175240.png",
-    "Express/Express settings.md",
     "imagenes/Diagram2.svg.xml",
     "imagenes/Diagram2.svg",
     "Express",

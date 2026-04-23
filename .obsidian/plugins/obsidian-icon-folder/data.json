@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiBug",
       "LiPackageCheck",
       "LiTranspose",
       "LiSignpostBig",
-      "LiPencilRuler",
-      "LiConstruction"
+      "LiPencilRuler"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -157,5 +157,9 @@
   "Mongoose/Transacciones.md": {
     "iconName": "LiPackageCheck",
     "iconColor": "#97d219"
+  },
+  "Módulos reutilizables/Manejador global de errores.md": {
+    "iconName": "LiBug",
+    "iconColor": "#6e6bef"
   }
 }
