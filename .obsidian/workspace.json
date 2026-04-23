@@ -11,10 +11,14 @@
             "id": "858a7c0cd137522e",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Vista gráfica"
+              "type": "markdown",
+              "state": {
+                "file": "Manejo de errores/express-async-errors.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "express-async-errors"
             }
           }
         ]
@@ -207,7 +211,7 @@
   "active": "858a7c0cd137522e",
   "lastOpenFiles": [
     "Módulos reutilizables/Manejador global de errores.md",
-    "Manejo de errores/Sin título.md",
+    "Manejo de errores/express-async-errors.md",
     "Manejo de errores/http-errors.md",
     "Seguridad/NoCache.md",
     "Manejo de errores",
