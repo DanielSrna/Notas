@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiPackageCheck",
+      "LiTranspose",
+      "LiSignpostBig",
       "LiPencilRuler",
-      "LiConstruction",
-      "LiToolCase",
-      "LiShield",
-      "LiBomb"
+      "LiConstruction"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -148,6 +148,14 @@
   },
   "Mongoose/Operaciones CRUD.md": {
     "iconName": "LiPencilRuler",
+    "iconColor": "#97d219"
+  },
+  "Mongoose/Middleware de Mongoose.md": {
+    "iconName": "LiSignpostBig",
+    "iconColor": "#97d219"
+  },
+  "Mongoose/Transacciones.md": {
+    "iconName": "LiPackageCheck",
     "iconColor": "#97d219"
   }
 }
