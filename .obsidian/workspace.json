@@ -11,10 +11,14 @@
             "id": "d37c2b331748c685",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Vista gráfica"
+              "type": "markdown",
+              "state": {
+                "file": "Seguridad/Express-rate-limit.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Express-rate-limit"
             }
           }
         ]
@@ -206,6 +210,9 @@
   },
   "active": "d37c2b331748c685",
   "lastOpenFiles": [
+    "Seguridad/Helmet.md",
+    "Seguridad/Express-rate-limit.md",
+    "Seguridad",
     "Mongoose/Transacciones.md",
     "Mongoose/Middleware de Mongoose.md",
     "Mongoose/Operaciones CRUD.md",
@@ -238,15 +245,12 @@
     "imagenes/Diagram2.svg.xml",
     "imagenes/Diagram2.svg",
     "Node.js/Node.js.md",
-    "Node.js/Protocolo HTTP.md",
     "Express",
-    "Node.js/NPM.md",
     "imagenes/Diagram1.svg",
     "imagenes/Diagram.svg",
     "imagenes/Diagram1.svg.xml",
     "imagenes",
     "imagenes/Diagram.svg.xml",
-    "Excalidraw",
-    "Node.js"
+    "Excalidraw"
   ]
 }
