@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Módulos reutilizables/Manejador global de errores.md",
+                "file": "Módulos reutilizables/Manejador de errores de validación.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Manejador global de errores"
+              "title": "Manejador de errores de validación"
             }
           }
         ]
@@ -210,10 +210,12 @@
   },
   "active": "858a7c0cd137522e",
   "lastOpenFiles": [
+    "Módulos reutilizables/Manejador global de errores.md",
+    "Módulos reutilizables/Manejador de errores de validación.md",
+    "Módulos reutilizables/Análisis, procesamiento, y guardado de archivos.md",
     "Validación/Express-validator.md",
     "Manejo de errores/express-async-errors.md",
     "Validación",
-    "Módulos reutilizables/Manejador global de errores.md",
     "Manejo de errores/http-errors.md",
     "Seguridad/NoCache.md",
     "Manejo de errores",
@@ -240,8 +242,6 @@
     "Express/Express.md",
     "Express/Controller.md",
     "MongoDB",
-    "Módulos reutilizables/Análisis, procesamiento, y guardado de archivos.md",
-    "Express/Static Files.md",
     "Módulos reutilizables",
     "imagenes/Pasted image 20260417180621.png",
     "imagenes/Pasted image 20260417175240.png",
