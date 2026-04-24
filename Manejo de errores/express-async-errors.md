@@ -16,3 +16,12 @@ app.post("/", async (req, res) => {
 	res.status(200).json({ message: "ingresado con éxito" });
 })
 ```
+Para usarlo es cuestión de instalar, y ponerlo en el archivo final del proyecto:
+```bash
+npm install express-async-errors
+```
+Archivo final:
+```javascript
+require('express-async-errors');
+// Arriba de las rutas obviamente
+```
