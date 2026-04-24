@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Manejo de errores/express-async-errors.md",
+                "file": "Validación/Express-validator.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "express-async-errors"
+              "title": "Express-validator"
             }
           }
         ]
@@ -210,8 +210,10 @@
   },
   "active": "858a7c0cd137522e",
   "lastOpenFiles": [
-    "Módulos reutilizables/Manejador global de errores.md",
     "Manejo de errores/express-async-errors.md",
+    "Validación/Express-validator.md",
+    "Validación",
+    "Módulos reutilizables/Manejador global de errores.md",
     "Manejo de errores/http-errors.md",
     "Seguridad/NoCache.md",
     "Manejo de errores",
@@ -240,7 +242,6 @@
     "MongoDB",
     "Módulos reutilizables/Análisis, procesamiento, y guardado de archivos.md",
     "Express/Static Files.md",
-    "Express/Manejo de archivos.md",
     "Módulos reutilizables",
     "imagenes/Pasted image 20260417180621.png",
     "imagenes/Pasted image 20260417175240.png",
@@ -250,7 +251,6 @@
     "imagenes/Diagram1.svg",
     "imagenes/Diagram.svg",
     "imagenes/Diagram1.svg.xml",
-    "imagenes",
-    "imagenes/Diagram.svg.xml"
+    "imagenes"
   ]
 }
