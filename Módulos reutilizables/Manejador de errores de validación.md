@@ -1,4 +1,4 @@
-Este manejador se utiliza con el paquete **express-validator**, y tiene como finalidad manejar los errores de validación.
+Este manejador se utiliza con el paquete **[[Express-validator]]**, y tiene como finalidad manejar los errores de validación.
 ```javascript
 const { validationResult } = require('express-validator');
 
@@ -36,7 +36,7 @@ const middlewaresRegistro = [
 ];
 
 // La ruta queda súper limpia:
-router.post('/registro', registroValidaciones, (req, res) => {
+router.post('/registro', middlewaresRegistro, (req, res) => {
     // Tu lógica normal...
 });
 ```

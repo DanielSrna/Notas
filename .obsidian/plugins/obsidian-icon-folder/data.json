@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiBugPlay",
       "LiBug",
       "LiPackageCheck",
       "LiTranspose",
-      "LiSignpostBig",
-      "LiPencilRuler"
+      "LiSignpostBig"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -160,6 +160,10 @@
   },
   "Módulos reutilizables/Manejador global de errores.md": {
     "iconName": "LiBug",
+    "iconColor": "#6e6bef"
+  },
+  "Módulos reutilizables/Manejador de errores de validación.md": {
+    "iconName": "LiBugPlay",
     "iconColor": "#6e6bef"
   }
 }

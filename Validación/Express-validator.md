@@ -33,7 +33,7 @@ app.post("/register", userValidator, (req, res) => {
 Son los contenedores en donde viene la información, en el ejemplo anterior usamos body, pero hay más:
 - body: es el cuerpo de la petición, donde viene la mayoría de la información.
 - query: son los valores de consulta que vienen en la URL.
-- param: son los parametros de la URL.
+- param: son los parámetros de la URL.
 - cookie: es el valor de las cookie.
 - header: aquí vienen los encabezados de la solicitud, estos son metadatos.
 ```javascript
@@ -84,5 +84,41 @@ Por ejemplo:
 	body('codigo')
 	.matches(/^[A-Z]{3}[0-9]{4}$/)
 	.withMessage('El código no cumple con el formato requerido.')
+]
+```
+# Custom, y sanitización
+Ahora vamos a aprender sobre como crear validaciones COMPLEJAS, y como sanitizar valores.
+#### Custom
+Con custom vamos a poder crear validaciones que puedan:
+- Validar por medio del uso de la base de datos.
+- Validar que dos datos de un mismo campo sean iguales. Por ejemplo, confirmar una contraseña dos veces.
+- Validar por medio de lógica profunda. (poco usual)
+La estructura es:
+```javascript
+[
+	body("email")
+		.isEmail()
+		.withMessage("Debe ser un email valido")
+		.custom(async valor => {
+			const resultado = await User.find({ email: valor })
+			if (resultado) { throw new Error("El email ya existe") }
+			return true
+		})
+]
+```
+#### Sanitización
+Cuando nos llegan los valores, es usual que el usuario sin querer deje ir un punto, o un espacio en donde no debe. Nosotros tenemos el trabajo de regular todas esas pequeñas fallas para que la información almacenada sea lo más fiable posible:
+- trim(): eliminar los espacios al principio, y final.
+- escpae(): convierte los caracteres HTML como <, y >, a sus entidades correspondientes ($lt, $gt), para evitar un ataque XSS.
+- normalizeEmail(): normaliza el email, convirtiéndolo a minúsculas, y eliminando signos irrelevantes, como un punto al final.
+Se usan así:
+```javascript
+[
+	body("username")
+		.trim()
+		.escape()
+	body("email")
+		.isEmail()
+		.normalizeEmail()
 ]
 ```
