@@ -21,4 +21,48 @@ Perfecto, eso es todo, no se necesita más para encriptar la contraseña.
 > [!info] SALTS
 > El número de salts (en este caso 10), indica cuantas veces se va encriptar la misma contraseña para una mayor seguridad. Recomiendo usar una variable de entorno.
 ## Comparación
-Ahora para el proceso de login, debemos de comparar la contraseña que nos ofrece el usuario, y 
+Ahora para el proceso de login, debemos de comparar la contraseña que nos ofrece el usuario, y para ello vamos a hacer uso de un método de Mongoose dentro del mismo archivo de esquema, o modelo de usuario.
+```javascript
+const bcrypt = require("bcryptjs");
+
+registroSchema.methods.compararContraseña = async function (password) {
+    return await bcrypt.compare(password, this.password);
+};
+```
+Para usarlo, nos dirigimos a la ruta de login, y lo empleamos así:
+```javascript
+const User = require("../models/User");
+
+const login = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    // Buscamos al usuario
+    const usuarioEncontrado = await User.findOne({ email });
+    
+    if (!usuarioEncontrado) {
+      return res.status(401).json({ mensaje: "Credenciales invalidas" });
+    }
+
+    // Ahora 'usuarioEncontrado' sí existe y podemos pasárselo a bcrypt
+    const esValida = await usuarioEncontrado.compararPassword(password);
+
+    if (!esValida) {
+      return res.status(401).json({ mensaje: "Credenciales invalidas" });
+    }
+
+    // Login exitoso
+    res.status(200).json({ 
+      mensaje: "Login exitoso", 
+      user: { email: usuarioEncontrado.email, id: usuarioEncontrado._id } 
+    });
+
+  } catch (error) {
+    res.status(500).json({ mensaje: "Error interno en el servidor" });
+  }
+};
+```
+Bastante sencillo, ¿Verdad?
+> [!info] JWT
+> Es importante considerar que en este paso de login, también se usan tokens para manejar la sesión, y autorización dentro de las rutas.
+
