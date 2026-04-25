@@ -6,6 +6,8 @@ Ahora nos dirigimos al archivo en donde tenemos el esquema, o molde principal de
 ## Encriptación
 Para encriptar vamos a utilizar una función **PRE**, es un [[Middleware de Mongoose]] que permite realizar acciones antes de que se registre el usuario, y en nuestro caso, es encriptar la contraseña antes de que sea guardada en la base de datos.
 ```javascript
+const bcrypt = require("bcryptjs");
+
 registroSchema.pre("save", async function (next) {
   // Solo hashear si la contraseña ha sido modificada (o es nueva)
   if (!this.isModified("password")) return next();
