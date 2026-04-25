@@ -210,9 +210,9 @@
   },
   "active": "bc4383f2e65cf98d",
   "lastOpenFiles": [
-    "Módulos reutilizables/Análisis, procesamiento, y guardado de archivos.md",
-    "Mongoose/Métodos de Mongoose.md",
     "Módulos reutilizables/Encriptación, y comparación de contraseñas.md",
+    "Mongoose/Métodos de Mongoose.md",
+    "Módulos reutilizables/Análisis, procesamiento, y guardado de archivos.md",
     "Mongoose/Esquemas.md",
     "Mongoose/Middleware de Mongoose.md",
     "Validación/Express-validator.md",

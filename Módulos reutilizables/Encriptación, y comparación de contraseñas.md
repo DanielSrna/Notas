@@ -21,7 +21,7 @@ Perfecto, eso es todo, no se necesita más para encriptar la contraseña.
 > [!info] SALTS
 > El número de salts (en este caso 10), indica cuantas veces se va encriptar la misma contraseña para una mayor seguridad. Recomiendo usar una variable de entorno.
 ## Comparación
-Ahora para el proceso de login, debemos de comparar la contraseña que nos ofrece el usuario, y para ello vamos a hacer uso de un método de Mongoose dentro del mismo archivo de esquema, o modelo de usuario.
+Ahora para el proceso de login, debemos de comparar la contraseña que nos ofrece el usuario, y para ello vamos a hacer uso de un [[Métodos de Mongoose]] dentro del mismo archivo de esquema, o modelo de usuario.
 ```javascript
 const bcrypt = require("bcryptjs");
 
