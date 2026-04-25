@@ -11,10 +11,14 @@
             "id": "bc4383f2e65cf98d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Módulos reutilizables/Encriptación, y comparación de contraseñas.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "title": "Encriptación, y comparación de contraseñas"
             }
           }
         ]
@@ -206,6 +210,8 @@
   },
   "active": "bc4383f2e65cf98d",
   "lastOpenFiles": [
+    "Mongoose/Middleware de Mongoose.md",
+    "Módulos reutilizables/Encriptación, y comparación de contraseñas.md",
     "Validación/Express-validator.md",
     "Módulos reutilizables/Manejador de errores de validación.md",
     "Módulos reutilizables/Manejador global de errores.md",
@@ -220,7 +226,6 @@
     "Seguridad/Helmet.md",
     "Seguridad",
     "Mongoose/Transacciones.md",
-    "Mongoose/Middleware de Mongoose.md",
     "Mongoose/Operaciones CRUD.md",
     "Mongoose/Esquemas.md",
     "Mongoose/Mongoose.md",
@@ -236,7 +241,6 @@
     "MongoDB/Aggregation Pipeline.md",
     "Express/Arquitectura de un proyecto en Express.md",
     "Express/Express.md",
-    "Express/Controller.md",
     "MongoDB",
     "Módulos reutilizables",
     "imagenes/Pasted image 20260417180621.png",
