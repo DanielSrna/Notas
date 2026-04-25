@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiShieldCheck",
       "LiBugPlay",
       "LiBug",
       "LiPackageCheck",
-      "LiTranspose",
-      "LiSignpostBig"
+      "LiTranspose"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -164,6 +164,10 @@
   },
   "Módulos reutilizables/Manejador de errores de validación.md": {
     "iconName": "LiBugPlay",
+    "iconColor": "#6e6bef"
+  },
+  "Módulos reutilizables/Encriptación, y comparación de contraseñas.md": {
+    "iconName": "LiShieldCheck",
     "iconColor": "#6e6bef"
   }
 }

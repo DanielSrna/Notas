@@ -25,7 +25,7 @@ Ahora para el proceso de login, debemos de comparar la contraseña que nos ofrec
 ```javascript
 const bcrypt = require("bcryptjs");
 
-registroSchema.methods.compararContraseña = async function (password) {
+registroSchema.methods.compararPassword = async function (password) {
     return await bcrypt.compare(password, this.password);
 };
 ```
@@ -38,7 +38,7 @@ const login = async (req, res) => {
 
   try {
     // Buscamos al usuario
-    const usuarioEncontrado = await User.findOne({ email });
+    const usuarioEncontrado = await User.findOne({ email }).select("+password");
     
     if (!usuarioEncontrado) {
       return res.status(401).json({ mensaje: "Credenciales invalidas" });
@@ -63,6 +63,8 @@ const login = async (req, res) => {
 };
 ```
 Bastante sencillo, ¿Verdad?
-> [!info] JWT
-> Es importante considerar que en este paso de login, también se usan tokens para manejar la sesión, y autorización dentro de las rutas.
+> [!info] TIPS
+> Dentro del modelo de usuario, es recomendable que agregues "select: false", como una de las reglas del campo contraseña. 
+> 
+> Es importante considerar que en el paso de login, también se usan tokens para manejar la sesión, y autorización dentro de las rutas.
 
