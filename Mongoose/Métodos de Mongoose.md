@@ -1,0 +1,1 @@
+Los métodos de Mongoose, son todas aquellas funciones que vamos a realizar con los datos de la base de datos. Ya sea cualquier tipo de CRUD, operaciones de login, verificación, JWT, etc. Todo aquello que interacture con
