@@ -9,10 +9,46 @@ userSchema.methods.obtenerNombreCompleto = function() {
 ```
 # Tipos
 Tenemos dos tipos de métodos, y ambos afectan a un documento, o todos los documentos de la colección.
-#### Método normal
-Este método es el que más vamos a usar, y tiene como finalidad realizar operaciones con un solo documento de la colección, ya sea buscar, crear, leer, eliminar, etc. Su construcción es tal como la especificamos antes:
+#### Método de instancia
+Para poder hacer uso de este método, primero debemos de tener un objeto instanciado del modelo. Por ejemplo, traer un usuario de la base de datos, y verificar si aún está suscrito.
 ```javascript
-userSchema.buscarPorEmail = function(email) {
-  return this.find({ email: new RegExp(email, 'i') });
+userSchema.methods.esSuscripcionActiva = function() {
+  const hoy = new Date();
+  // Supongamos que tienes un campo 'fechaExpiracion' en el schema
+  return this.fechaExpiracion > hoy;
 };
+```
+Para usarlo en la ruta:
+```javascript
+const user = require("../userSchema");
+
+router.post('/verificar-acceso', async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    // 1. Usamos el método ESTÁTICO para buscar al usuario
+    const usuario = await Usuario.buscarPorEmail(email);
+
+    if (!usuario) {
+      return res.status(404).json({ mensaje: "El correo no está registrado" });
+    }
+
+    // 2. Usamos el método de INSTANCIA sobre el usuario encontrado
+    if (usuario.esSuscripcionActiva()) {
+      res.json({
+        mensaje: "Acceso concedido",
+        data: "Contenido ultra secreto para suscriptores"
+      });
+    } else {
+      res.status(403).json({
+        mensaje: "Acceso denegado",
+        detalle: "Tu suscripción ha vencido"
+      });
+    }
+
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 ```
