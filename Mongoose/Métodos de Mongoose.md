@@ -1,4 +1,4 @@
-Los métodos de Mongoose, son todas aquellas funciones que vamos a realizar con los datos de la base de datos. Ya sea cualquier tipo de CRUD, operaciones de login, verificación, JWT, etc. Todo aquello que interactue con la base de datos, debe de estar aquí.
+Los métodos de [[Mongoose]], son todas aquellas funciones que vamos a realizar con los datos de la base de datos. Ya sea cualquier tipo de CRUD, operaciones de login, verificación, JWT, etc. Todo aquello que interactue con la base de datos, debe de estar aquí.
 # Creación
 Los métodos van después de definir las reglas del esquema, pero antes de definir las operaciones **PRE**, o **POST**. Obviamente, también van antes de compilar el modelo, o exportarlo. Su estructura es:
 ```javascript

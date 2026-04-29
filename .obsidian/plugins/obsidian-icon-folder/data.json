@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiBackpack",
       "LiShieldCheck",
       "LiBugPlay",
       "LiBug",
-      "LiPackageCheck",
-      "LiTranspose"
+      "LiPackageCheck"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -169,5 +169,9 @@
   "Módulos reutilizables/Encriptación, y comparación de contraseñas.md": {
     "iconName": "LiShieldCheck",
     "iconColor": "#6e6bef"
+  },
+  "Mongoose/Métodos de Mongoose.md": {
+    "iconName": "LiBackpack",
+    "iconColor": "#97d219"
   }
 }
