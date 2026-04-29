@@ -6,3 +6,4 @@ Si el usuario cumple con todo lo anterior, ya debe estar autenticado. Aunque, ¿
 ## ¿Por qué es necesario?
 Autenticar un usuario en una plataforma se convierte necesario solo en la situación en donde debamos de almacenar sus datos dentro del almacenamiento persistente. Por ejemplo, con una red social, una plataforma de compras, una plataforma educativa, etc.
 ## ¿Cómo se logra?
+Se logra de dos formas principales, y ambas son buenas practicas, de hecho muchas aplicaciones usan todas dos juntas.
