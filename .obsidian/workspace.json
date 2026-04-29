@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Módulos reutilizables/Encriptación, y comparación de contraseñas.md",
+                "file": "Autenticación, y autorización/JWT.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Encriptación, y comparación de contraseñas"
+              "title": "JWT"
             }
           }
         ]
@@ -210,11 +210,11 @@
   },
   "active": "bc4383f2e65cf98d",
   "lastOpenFiles": [
+    "Módulos reutilizables/Encriptación, y comparación de contraseñas.md",
     "Autenticación, y autorización/JWT.md",
     "Autenticación, y autorización/Autenticación, y autorización.md",
     "Autenticación, y autorización",
     "Mongoose/Métodos de Mongoose.md",
-    "Módulos reutilizables/Encriptación, y comparación de contraseñas.md",
     "Módulos reutilizables/Análisis, procesamiento, y guardado de archivos.md",
     "Mongoose/Esquemas.md",
     "Mongoose/Middleware de Mongoose.md",
