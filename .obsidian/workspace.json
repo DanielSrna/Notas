@@ -11,10 +11,14 @@
             "id": "bc4383f2e65cf98d",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Vista gráfica"
+              "type": "markdown",
+              "state": {
+                "file": "Autenticación, y autorización/Autenticación.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Autenticación"
             }
           }
         ]
@@ -206,6 +210,8 @@
   },
   "active": "bc4383f2e65cf98d",
   "lastOpenFiles": [
+    "Autenticación, y autorización/Autenticación.md",
+    "Autenticación, y autorización",
     "Mongoose/Métodos de Mongoose.md",
     "Módulos reutilizables/Encriptación, y comparación de contraseñas.md",
     "Módulos reutilizables/Análisis, procesamiento, y guardado de archivos.md",
@@ -236,7 +242,6 @@
     "MongoDB/Consultas avanzadas.md",
     "MongoDB/Comandos básicos de MongoDB.md",
     "MongoDB/Aggregation Pipeline.md",
-    "Express/Arquitectura de un proyecto en Express.md",
     "MongoDB",
     "Módulos reutilizables",
     "imagenes/Pasted image 20260417180621.png",
@@ -246,7 +251,6 @@
     "Express",
     "imagenes/Diagram1.svg",
     "imagenes/Diagram.svg",
-    "imagenes/Diagram1.svg.xml",
-    "imagenes"
+    "imagenes/Diagram1.svg.xml"
   ]
 }
