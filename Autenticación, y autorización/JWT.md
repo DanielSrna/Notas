@@ -65,3 +65,4 @@ La rotación de tokens es una practica muy útil ya que permite tener un plus de
 2. Con AccesToken va explorar todas las rutas protegidas por permisos basados en rol.
 3. Con RefreshToken se va actualizar su AccesToken por uno nuevo, ya que este se vence muy rápido. 
 4. El punto 3 se logra ya que RefreshToken se guarda en la DB apenas es creado, y cada que el usuario se le acaba la sesión, se redirige a una ruta en donde se verifica su RefreshToken, y se le da un nuevo AccesToken.
+Esto hace que todo sea muchísimo más seguro.
