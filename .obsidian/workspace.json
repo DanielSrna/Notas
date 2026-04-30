@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Express/Arquitectura de un proyecto en Express.md",
+                "file": "Mongoose/Mongoose.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Arquitectura de un proyecto en Express"
+              "title": "Mongoose"
             }
           }
         ]
@@ -211,6 +211,7 @@
   "active": "bc4383f2e65cf98d",
   "lastOpenFiles": [
     "Módulos reutilizables/Winston.md",
+    "Express/Arquitectura de un proyecto en Express.md",
     "Autenticación, y autorización/Cookies.md",
     "Autenticación, y autorización/JWT.md",
     "Módulos reutilizables/Encriptación, y comparación de contraseñas.md",
@@ -241,7 +242,6 @@
     "MongoDB/Transacciones.md",
     "MongoDB/Operaciones CRUD.md",
     "MongoDB/MongoDB.md",
-    "MongoDB/Indices.md",
     "MongoDB",
     "Módulos reutilizables",
     "imagenes/Pasted image 20260417180621.png",
