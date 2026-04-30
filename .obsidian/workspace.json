@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mongoose/Mongoose.md",
+                "file": "Seguridad/HPP.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Mongoose"
+              "title": "HPP"
             }
           }
         ]
@@ -210,6 +210,9 @@
   },
   "active": "bc4383f2e65cf98d",
   "lastOpenFiles": [
+    "Seguridad/Helmet.md",
+    "Seguridad/HPP.md",
+    "Mongoose/Mongoose.md",
     "Módulos reutilizables/Winston.md",
     "Express/Arquitectura de un proyecto en Express.md",
     "Autenticación, y autorización/Cookies.md",
@@ -229,13 +232,10 @@
     "Manejo de errores/http-errors.md",
     "Seguridad/NoCache.md",
     "Manejo de errores",
-    "Seguridad/HPP.md",
     "Seguridad/Express-rate-limit.md",
-    "Seguridad/Helmet.md",
     "Seguridad",
     "Mongoose/Transacciones.md",
     "Mongoose/Operaciones CRUD.md",
-    "Mongoose/Mongoose.md",
     "imagenes/Pasted image 20260422153142.png",
     "Mongoose",
     "MongoDB/MongoDB Atlas.md",
